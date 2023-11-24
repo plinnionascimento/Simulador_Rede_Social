@@ -27,12 +27,12 @@ public class ExcluirAmigos extends JFrame {
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    ExcluirAmigos frame = new ExcluirAmigos();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                // try {
+                //     ExcluirAmigos frame = new ExcluirAmigos();
+                //     frame.setVisible(true);
+                // } catch (Exception e) {
+                //     e.printStackTrace();
+                // }
             }
         });
     }

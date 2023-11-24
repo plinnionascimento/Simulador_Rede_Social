@@ -5,9 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import model.amigos;
-import view.List;
+
 
 public class Connect  { 
 	public Connection conn;
@@ -15,7 +16,7 @@ public class Connect  {
 	public Connect() {
         try {
           
-        	String url = "jdbc:sqlite:C:/Users/Plinio.Nascimento/Downloads/Simulador_rede_social";
+        	String url = "jdbc:sqlite:C:/Users/Plinio.Nascimento/Documents/JAVA/Simulador_Rede_Social/Simulador_rede_social";
         
             conn = DriverManager.getConnection(url);
             

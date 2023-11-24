@@ -1,22 +1,16 @@
 package view;
 
 
-import java.awt.EventQueue;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
@@ -30,18 +24,7 @@ public class EnviarMensagem extends JFrame {
     private JTextArea textAreaMensagem;
 	protected AbstractButton textAreaEmail;
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    EnviarMensagem frame = new EnviarMensagem();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+  
 
     public EnviarMensagem(Connect connect) {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,21 +59,21 @@ public class EnviarMensagem extends JFrame {
                 // Get the friend's email address
                 String email = (String) tableFriends.getValueAt(selectedRow, 1);
 
-                // Send the message
-                try {
-                    Connect connect = new Connect();
-                    String sql = "INSERT INTO mensagens (remetente_email, destinatario_email, mensagem) VALUES (?, ?, ?)";
-                    PreparedStatement statement = ((Object) connect.getConnection()).prepareStatement(sql);
-                    statement.setString(1, ((Object) connect.getUsuarioLogado()).getEmail());
-                    statement.setString(2, email);
-                    statement.setString(3, textAreaMensagem.getText());
-                    statement.execute();
+                // // Send the message
+                // try {
+                //     Connect connect = new Connect();
+                //     String sql = "INSERT INTO mensagens (remetente_email, destinatario_email, mensagem) VALUES (?, ?, ?)";
+                //     PreparedStatement statement = ((Object) connect.getConnection()).prepareStatement(sql);
+                //     statement.setString(1, ((Object) connect.getUsuarioLogado()).getEmail());
+                //     statement.setString(2, email);
+                //     statement.setString(3, textAreaMensagem.getText());
+                //     statement.execute();
 
-                    // Display a confirmation message
-                    JOptionPane.showMessageDialog(EnviarMensagem.this, "Mensagem enviada com sucesso.");
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
+                //     // Display a confirmation message
+                //     JOptionPane.showMessageDialog(EnviarMensagem.this, "Mensagem enviada com sucesso.");
+                // } catch (SQLException ex) {
+                //     ex.printStackTrace();
+                // }
             }
         });
         contentPane.add(buttonEnviar);

@@ -64,7 +64,8 @@ public class ViewPrimeiraTela extends JFrame {
             			boolean login = connect.login(email, password);
             			if(login == true) {
             				dispose();
-            				ViewSegundaTela acesso = new ViewSegundaTela();
+            				ViewSegundaTela acesso = new ViewSegundaTela(connect);
+                            acesso.setVisible(true);
             			}
 					} catch (SQLException e1) {
 						e1.printStackTrace();
