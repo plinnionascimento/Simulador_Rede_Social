@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException {
 		Connect connect = new Connect();
-
+        System.out.println("oi");
 		EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
